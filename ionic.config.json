@@ -1,0 +1,7 @@
+{
+  "name": "faio",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
