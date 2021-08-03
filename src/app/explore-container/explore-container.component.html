@@ -1,4 +1,21 @@
 <div id="container">
-  <strong>{{ name }}</strong>
-  <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <strong *ngIf="biometricType">Biometric is available : {{ biometricType }}</strong>
+  <strong *ngIf="biometricSecret">Biometric secret : {{ biometricSecret }}</strong>
+  <ion-button color="primary" expand="block" class="ion-activatable ripple-parent signin-btn" *ngIf="!biometricType"
+    (click)="checkBiometric()">
+    Check Biometric
+  </ion-button>
+  <!-- <ion-button color="primary" expand="block" class="ion-activatable ripple-parent signin-btn"
+    *ngIf="biometricType" (click)="loadBiometricSecret()">
+    Load Biometric Secret
+  </ion-button> -->
+  <ion-button color="primary" expand="block" class="ion-activatable ripple-parent signin-btn"
+    *ngIf="biometricType && !biometricSecret" (click)="registerBiometric()">
+    Register Biometric
+  </ion-button>
+  <!-- <ion-button color="primary" expand="block" class="ion-activatable ripple-parent signin-btn"
+    (click)="openInAppBrowser()">
+    Open
+  </ion-button> -->
+
 </div>
